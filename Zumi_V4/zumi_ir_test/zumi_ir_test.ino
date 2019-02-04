@@ -55,16 +55,18 @@ void setup() {
 void loop() {
     int selectedState = readIR();
 
-    Serial.println(selectedState);
+    //Serial.println(selectedState);
 
     if (selectedState == 1 || 2) {
        setMotorState(selectedState, 150, 150);
+       delay(150);
     }
-    else {
-       setMotorState(selectedState, 75, 75);
+    if  (selectedState == 3 || 4) {
+       setMotorState(selectedState, 60, 60);
+       delay(150);
     }
    
-    delay(150);
+    
     setMotorState(0,0,0);
 
     
@@ -95,13 +97,13 @@ int readIR() {
     else if (results.value == 0xE0E020DF)
     {
       Serial.println("LEFT");
-      state = 3;
+      state = 4;
     }
 
     else if (results.value == 0xE0E010EF)
     {
       Serial.println("RIGHT");
-      state = 4;
+      state = 3;
 
     }
 
@@ -202,5 +204,3 @@ byte setMotorState(byte selectedMotorState, int speedM1, int speedM2)
   }
   return motorState;
 }
-
-
