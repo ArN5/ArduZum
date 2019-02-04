@@ -16,11 +16,11 @@
 //Library for the OLED
 #include "U8glib.h"
 //I am using the I2C one so select the following class
-U8GLIB_SSD1306_128X32 u8g(U8G_I2C_OPT_NONE);
+U8GLIB_SSD1306_128X64 u8g(U8G_I2C_OPT_NONE);
 
 //define max of the screen pixels
 #define ROWMAX 128
-#define COLMAX 32
+#define COLMAX 64
 //zumi eyes
 # define eyeSpeed 2
 //in pixels
@@ -80,7 +80,6 @@ MPU6050 mpu6050(Wire);
 
 double bitsPerVolts = 0;
 unsigned long counter = 0;
-
 // the setup routine runs once when you press reset:
 void setup() {
 
@@ -259,8 +258,8 @@ void zumiEyes()
 
   //set the pixel location on the screen
   //(X position, Y position)
-  u8g.drawBox(128 / 4, 0, eyeWidth, 32);
-  u8g.drawBox(128 / 4 * 3, 0, eyeWidth, 32);
+  u8g.drawBox(128 / 4, 0, eyeWidth, 64);
+  u8g.drawBox(128 / 4 * 3, 0, eyeWidth, 64);
 
 }
 
@@ -270,8 +269,8 @@ void moveEyesLeft()
 
   //set the pixel location on the screen
   //(X position, Y position)
-  u8g.drawBox(128 / 4 - 20, 0, eyeWidth, 32);
-  u8g.drawBox(128 / 4 * 3 - 20, 0, eyeWidth, 32);
+  u8g.drawBox(128 / 4 - 20, 0, eyeWidth, 64);
+  u8g.drawBox(128 / 4 * 3 - 20, 0, eyeWidth, 64); 
 
 }
 
@@ -282,6 +281,13 @@ void moveEyesRight()
   u8g.drawBox(128 / 4 + 20, 0, eyeWidth, 32);
   u8g.drawBox(128 / 4 * 3 + 20, 0, eyeWidth, 32);
 
+}
+
+
+void sleeping(){
+
+
+  
 }
 
 //in order to make accurate voltage readings we will us the internal
