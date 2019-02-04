@@ -144,8 +144,11 @@ void setup() {
   digitalWrite(BACK_LEFT_LED, HIGH);
   digitalWrite(BACK_RIGHT_LED, HIGH);
   delay(1000);
+
+  //play sound
   excited();
 
+    //set up oled 
     u8g.firstPage();
   //u8g.setFont(u8g_font_04b_24);
   u8g.setFont(u8g_font_unifont);
@@ -225,6 +228,8 @@ void loop() {
   //motorTest(25);
 
  //  motorTest(6);
+
+
 
 }
 
