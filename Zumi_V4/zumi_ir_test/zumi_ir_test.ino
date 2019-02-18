@@ -59,20 +59,15 @@ void loop() {
 
     if (selectedState == 1 || 2) {
        setMotorState(selectedState, 150, 150);
-       delay(150);
+       delay(200);
     }
     if  (selectedState == 3 || 4) {
        setMotorState(selectedState, 60, 60);
        delay(150);
     }
    
-    
     setMotorState(0,0,0);
 
-    
-  
-
-  
 }
 
 
