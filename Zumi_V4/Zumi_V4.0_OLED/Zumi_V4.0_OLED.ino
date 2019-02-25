@@ -16,7 +16,7 @@
 //Library for the OLED
 #include "U8glib.h"
 //I am using the I2C one so select the following class
-U8GLIB_SSD1306_128X64 u8g(U8G_I2C_OPT_NONE);
+
 
 //define max of the screen pixels
 #define ROWMAX 128
